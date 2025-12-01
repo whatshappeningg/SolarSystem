@@ -32,6 +32,10 @@ public class SolarSystem : MonoBehaviour
         satelite1.RotateAround(transform.position, transform.up, _rotationSpeedSatelite1 * Time.deltaTime);
         satelite2.RotateAround(satelite1.position, satelite1.right, _rotationSpeedSatelite2 * Time.deltaTime);
 
+        Debug.DrawLine(transform.position, Vector3.zero, Color.green);
+        Debug.DrawLine(transform.position, satelite1.position, Color.red);
+        Debug.DrawLine(transform.position, satelite2.position, Color.blue);
+        Debug.DrawLine(satelite1.position, satelite2.position, Color.brown);
 
     }
 }
