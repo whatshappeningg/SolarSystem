@@ -28,6 +28,10 @@ public class SolarSystem : MonoBehaviour
 
     void Update()
     {
+        transform.LookAt(Vector3.zero);
+        satelite1.LookAt(transform.position);
+        satelite2.LookAt(satelite1.position);
+
         transform.RotateAround(Vector3.zero, Vector3.forward, _rotationSpeedSol * Time.deltaTime);
         satelite1.RotateAround(transform.position, transform.up, _rotationSpeedSatelite1 * Time.deltaTime);
         satelite2.RotateAround(satelite1.position, satelite1.right, _rotationSpeedSatelite2 * Time.deltaTime);
