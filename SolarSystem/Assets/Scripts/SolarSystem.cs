@@ -41,5 +41,9 @@ public class SolarSystem : MonoBehaviour
         Debug.DrawLine(transform.position, satelite2.position, Color.blue);
         Debug.DrawLine(satelite1.position, satelite2.position, Color.brown);
 
+        float _angulo = Vector3.Angle(satelite2.right, Vector3.right);
+        if (_angulo < 90f) satelite2.localScale *= 0.99f;
+        else satelite2.localScale *= 1.01f;
+        print("El ángulo es de " + _angulo);
     }
 }
