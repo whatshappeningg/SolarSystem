@@ -6,11 +6,13 @@ public class SolarSystem : MonoBehaviour
     // public
     public Transform satelite1;
     public Transform satelite2;
+    public Transform camara;
 
     // private
     private int _rotationSpeedSol = 30;
     private int _rotationSpeedSatelite1 = 90;
     private int _rotationSpeedSatelite2 = 45;
+    private Vector3 distanciaCamara = new Vector3(0, 0, -9);
 
 
     void Start()
@@ -45,5 +47,11 @@ public class SolarSystem : MonoBehaviour
         if (_angulo < 90f) satelite2.localScale *= 0.99f;
         else satelite2.localScale *= 1.01f;
         print("El ángulo es de " + _angulo);
+    }
+
+    void LateUpdate()
+    {
+        camara.position = transform.position + distanciaCamara;
+        camara.LookAt(transform.position);
     }
 }
